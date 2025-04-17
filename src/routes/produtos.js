@@ -5,14 +5,9 @@ import prisma from "../prisma/cliente.js"
 const router = express.Router()
 
 router.get("/", async (req,res)=>{
-   try{
       const listaDePascoa = await prisma.produtos.findMany()
 
       res.status(200).json(listaDePascoa)
-   }
-   catch(error){
-       res.status(404).json({mensagem:"Erro ao buscar produtos!"})
-   }
 })
 
 
