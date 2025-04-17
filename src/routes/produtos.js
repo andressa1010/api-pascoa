@@ -4,16 +4,15 @@ import prisma from "../prisma/cliente.js"
 
 const router = express.Router()
 
-router.get("/", async (req,res)=>{
-   try{
-      const listaDePascoa = await prisma.produtos.findMany()
-
-      res.status(200).json(listaDePascoa)
+router.get("/", async (req, res) => {
+   try {
+     const listaDePascoa = await prisma.produtos.findMany();
+     res.status(200).json(listaDePascoa);
+   } catch (error) {
+     console.error("Erro no Render:", error); // ISSO AQUI MOSTRA NOS LOGS
+     res.status(500).json({ mensagem: "Erro ao buscar produtos!" });
    }
-   catch(error){
-       res.status(500).json({mensagem:"Erro ao buscar produtos!"})
-   }
-});
+ });
 
 
 router.post("/", async (req,res)=>{
