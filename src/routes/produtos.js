@@ -11,7 +11,7 @@ router.get("/", async (req,res)=>{
       res.status(200).json(listaDePascoa)
    }
    catch(error){
-       res.status(404).json({mensagem:"Erro ao buscar produtos!"})
+       res.status(500).json({mensagem:"Erro ao buscar produtos!"})
    }
 });
 
