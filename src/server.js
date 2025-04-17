@@ -18,7 +18,7 @@ app.use("/api/encomendas", encomendasRouter)
 app.use("/admin", adminRoutes)
 
 app.get("/", (req,res)=>{
-  res.send("Api de Páscoa Funcionando!🐰🍫")
+  res.send("Api de Páscoa Funcionando!🐰🍫🐰🍫")
 })
 
 app.listen(3001, ()=>{

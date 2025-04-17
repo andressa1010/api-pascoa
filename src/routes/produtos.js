@@ -5,10 +5,15 @@ import prisma from "../prisma/cliente.js"
 const router = express.Router()
 
 router.get("/", async (req,res)=>{
+   try{
       const listaDePascoa = await prisma.produtos.findMany()
 
       res.status(200).json(listaDePascoa)
-})
+   }
+   catch(error){
+       res.status(404).json({mensagem:"Erro ao buscar produtos!"})
+   }
+});
 
 
 router.post("/", async (req,res)=>{
@@ -26,6 +31,8 @@ router.post("/", async (req,res)=>{
        res.status(404).json({mensagem:"Erro ao criar produtos novos dados invalidos!"})
     }
 })
+
+
 
 router.put("/:id", async (req,res)=>{
      try{
