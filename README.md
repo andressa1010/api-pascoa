@@ -37,5 +37,7 @@ Layout responsivo e intuitivo.
 
 ![projeto-pascoa](https://github.com/user-attachments/assets/5610ecdc-24af-442d-a3b5-e800596246f0)
 
+deploy: https://encomendaspascoa.netlify.app/
+
 💻 Desenvolvido por 
 Andressa Nunes https://www.linkedin.com/in/andressa-nunes-silva/ 
